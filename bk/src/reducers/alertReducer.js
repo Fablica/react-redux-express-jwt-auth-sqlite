@@ -1,6 +1,11 @@
-import { alertConstants } from '../_constants';
+import alertConstants from '../constants/alertConstants';
 
-const alertReducer = (state = {}, action) => {
+const initialState ={
+  type: null,
+  message: null
+}
+
+const alertReducer = (state = initialState, action) => {
   switch (action.type) {
     case alertConstants.SUCCESS:
       return {

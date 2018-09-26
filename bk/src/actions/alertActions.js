@@ -15,7 +15,7 @@ const error = (message) => {
 }
 
 const clear = () => {
-    return { type: alertConstants.CLEAR };
+    return { type: alertConstants.CLEAR, message: null };
 }
 
 export default alertActions;

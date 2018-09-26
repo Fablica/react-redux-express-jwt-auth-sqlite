@@ -3,10 +3,10 @@ import { Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import history from '../helpers/history';
-import { alertActions } from '../_actions';
-import { PrivateRoute } from '../_components';
-import { HomePage } from '../HomePage';
-import { LoginPage } from '../LoginPage';
+import alertActions from '../actions/alertActions';
+import PrivateRoute from '../components/PrivateRoute';
+import HomePage from '../HomePage/HomePage';
+import LoginPage from '../LoginPage/LoginPage';
 
 class App extends React.Component {
     constructor(props) {
@@ -21,6 +21,7 @@ class App extends React.Component {
 
     render() {
         const { alert } = this.props;
+        console.log(this.props)
         return (
             <div className="jumbotron">
                 <div className="container">
@@ -41,7 +42,7 @@ class App extends React.Component {
     }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
     const { alert } = state;
     return {
         alert
@@ -49,4 +50,4 @@ function mapStateToProps(state) {
 }
 
 const connectedApp = connect(mapStateToProps)(App);
-export { connectedApp as App };
+export default connectedApp;

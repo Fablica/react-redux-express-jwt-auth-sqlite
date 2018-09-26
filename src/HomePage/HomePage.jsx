@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import userActions from '../actions/userActions';
+import { userActions } from '../_actions';
 
-class HomePage extends Component {
+class HomePage extends React.Component {
     componentDidMount() {
         this.props.dispatch(userActions.getAll());
     }
@@ -35,7 +35,7 @@ class HomePage extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+function mapStateToProps(state) {
     const { users, authentication } = state;
     const { user } = authentication;
     return {
@@ -45,4 +45,4 @@ const mapStateToProps = (state) => {
 }
 
 const connectedHomePage = connect(mapStateToProps)(HomePage);
-export default connectedHomePage;
+export { connectedHomePage as HomePage };

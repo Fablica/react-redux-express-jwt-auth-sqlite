@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 
-import authenticationReducer from './authenticationReducer';
-import userReducer from './userReducer';
-import alertReducer from './alertReducer';
+import authentication from './authenticationReducer';
+import users from './usersReducer';
+import alert from './alertReducer';
 
 const rootReducer = combineReducers({
-  authenticationReducer,
-  userReducer,
-  alertReducer
+  authentication,
+  users,
+  alert
 });
 
 export default rootReducer;
