@@ -1,5 +1,5 @@
 import config from 'config';
-import authHeader from '../helpers/authHeader';
+import { authHeader } from '../helpers';
 
 export const userService = {
     login,

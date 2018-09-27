@@ -2,9 +2,9 @@ import React from 'react';
 import { Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import history from '../helpers/history';
-import { alertActions } from '../_actions';
-import { PrivateRoute } from '../_components';
+import { history } from '../helpers';
+import { alertActions } from '../actions';
+import { PrivateRoute } from '../components';
 import { HomePage } from '../HomePage';
 import { LoginPage } from '../LoginPage';
 

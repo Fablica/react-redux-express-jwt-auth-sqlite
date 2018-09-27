@@ -1,6 +1,6 @@
-import { userConstants } from '../_constants';
+import { userConstants } from '../constants';
 
-const usersReducer = (state = {}, action) => {
+export function users(state = {}, action) {
   switch (action.type) {
     case userConstants.GETALL_REQUEST:
       return {
@@ -11,12 +11,10 @@ const usersReducer = (state = {}, action) => {
         items: action.users
       };
     case userConstants.GETALL_FAILURE:
-      return {
+      return { 
         error: action.error
       };
     default:
       return state
   }
 }
-
-export default usersReducer;

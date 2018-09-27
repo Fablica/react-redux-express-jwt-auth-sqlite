@@ -1,7 +1,7 @@
-const configureFakeBackend = () => {
+export function configureFakeBackend() {
     let users = [{ id: 1, username: 'test', password: 'test', firstName: 'Test', lastName: 'User' }];
     let realFetch = window.fetch;
-    window.fetch = (url, opts) => {
+    window.fetch = function (url, opts) {
         return new Promise((resolve, reject) => {
             // wrap in timeout to simulate server api call
             setTimeout(() => {
@@ -55,5 +55,3 @@ const configureFakeBackend = () => {
         });
     }
 }
-
-export default configureFakeBackend;
