@@ -1,4 +1,3 @@
-import config from 'config';
 import { authHeader } from '../helpers';
 
 export const userService = {
@@ -14,7 +13,7 @@ function login(username, password) {
         body: JSON.stringify({ username, password })
     };
 
-    return fetch(`${config.apiUrl}/users/authenticate`, requestOptions)
+    return fetch('http://localhost:3000/users/authenticate', requestOptions)
         .then(handleResponse)
         .then(user => {
             // login successful if there's a jwt token in the response
@@ -38,7 +37,7 @@ function getAll() {
         headers: authHeader()
     };
 
-    return fetch(`${config.apiUrl}/users`, requestOptions).then(handleResponse);
+    return fetch('http://localhost:3000/users', requestOptions).then(handleResponse);
 }
 
 function handleResponse(response) {
@@ -48,7 +47,7 @@ function handleResponse(response) {
             if (response.status === 401) {
                 // auto logout if 401 response returned from api
                 logout();
-                location.reload(true);
+                Location.reload(true);
             }
 
             const error = (data && data.message) || response.statusText;

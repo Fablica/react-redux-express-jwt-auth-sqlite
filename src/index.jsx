@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 
 import { store } from './helpers';
 import { App } from './App';
+import registerServiceWorker from './registerServiceWorker';
 
 // setup fake backend
 import { configureFakeBackend } from './helpers';
@@ -15,3 +16,4 @@ render(
     </Provider>,
     document.getElementById('app')
 );
+registerServiceWorker();
