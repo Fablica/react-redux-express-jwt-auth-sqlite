@@ -58,22 +58,12 @@ class LoginPage extends Component {
               <Image src="/assets/logo.png" /> Log-in to your account
             </Header>
             {submitted && !username ? (
-              <Message
-                attached="top"
-                content="Username is required"
-                icon="attention"
-                warning
-              />
+              <Message error>Username is required</Message>
             ) : (
               <div />
             )}
             {submitted && !password ? (
-              <Message
-                attached="top"
-                content="Password is required"
-                icon="attention"
-                warning
-              />
+              <Message error>Password is required</Message>
             ) : (
               <div />
             )}
@@ -86,6 +76,7 @@ class LoginPage extends Component {
                   iconPosition="left"
                   placeholder="User Name"
                   name="username"
+                  error={submitted && !username}
                   value={username}
                   onChange={this.handleChange}
                 />
@@ -96,10 +87,11 @@ class LoginPage extends Component {
                   placeholder="Password"
                   type="password"
                   name="password"
+                  error={submitted && !password}
                   value={password}
                   onChange={this.handleChange}
                 />
-                <Button color="teal" fluid size="large" loading={loggingIn}>
+                <Button color="teal" fluid size="large" disabled={!username || !password} loading={loggingIn}>
                   Login
                 </Button>
               </Segment>
