@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import { history } from '../helpers';
 import { alertActions } from '../actions';
 import { PrivateRoute } from '../components';
-import { HomePage } from '../HomePage';
-import { LoginPage } from '../LoginPage';
+import { HomePage } from '../containers';
+import { LoginPage } from '../containers';
 
 class App extends React.Component {
     constructor(props) {
