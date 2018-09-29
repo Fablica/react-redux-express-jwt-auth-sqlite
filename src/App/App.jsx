@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component } from 'react';
 import { Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -8,7 +8,7 @@ import { PrivateRoute } from '../components';
 import { HomePage } from '../containers';
 import { LoginPage } from '../containers';
 
-class App extends React.Component {
+class App extends Component {
     constructor(props) {
         super(props);
 

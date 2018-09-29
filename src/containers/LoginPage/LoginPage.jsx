@@ -1,6 +1,16 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import {
+  Form,
+  Header,
+  Segment,
+  Button,
+  Grid,
+  Image,
+  Message
+} from "semantic-ui-react";
 
+import classes from "./LoginPage.css";
 import { userActions } from "../../actions";
 
 class LoginPage extends Component {
@@ -15,17 +25,14 @@ class LoginPage extends Component {
       password: "",
       submitted: false
     };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(e) {
+  handleChange = e => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
-  }
+  };
 
-  handleSubmit(e) {
+  handleSubmit = e => {
     e.preventDefault();
 
     this.setState({ submitted: true });
@@ -34,63 +41,74 @@ class LoginPage extends Component {
     if (username && password) {
       dispatch(userActions.login(username, password));
     }
-  }
+  };
 
   render() {
     const { loggingIn } = this.props;
     const { username, password, submitted } = this.state;
     return (
-      <div className="col-md-6 col-md-offset-3">
-        <div className="alert alert-info">
-          Username: test
-          <br />
-          Password: test
-        </div>
-        <h2>Login</h2>
-        <form name="form" onSubmit={this.handleSubmit}>
-          <div
-            className={
-              "form-group" + (submitted && !username ? " has-error" : "")
-            }
-          >
-            <label htmlFor="username">Username</label>
-            <input
-              type="text"
-              className="form-control"
-              name="username"
-              value={username}
-              onChange={this.handleChange}
-            />
-            {submitted &&
-              !username && (
-                <div className="help-block">Username is required</div>
-              )}
-          </div>
-          <div
-            className={
-              "form-group" + (submitted && !password ? " has-error" : "")
-            }
-          >
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              className="form-control"
-              name="password"
-              value={password}
-              onChange={this.handleChange}
-            />
-            {submitted &&
-              !password && (
-                <div className="help-block">Password is required</div>
-              )}
-          </div>
-          <div className="form-group">
-            <button className="btn btn-primary">Login</button>
-            {loggingIn && (
-              <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" alt="loading" />
+      <div className={classes.loginForm}>
+        <Grid
+          textAlign="center"
+          style={{ height: "100%" }}
+          verticalAlign="middle"
+        >
+          <Grid.Column style={{ maxWidth: 450 }}>
+            <Header as="h2" color="teal" textAlign="center">
+              <Image src="/assets/logo.png" /> Log-in to your account
+            </Header>
+            {submitted && !username ? (
+              <Message
+                attached="top"
+                content="Username is required"
+                icon="attention"
+                warning
+              />
+            ) : (
+              <div />
             )}
-          </div>
-        </form>
+            {submitted && !password ? (
+              <Message
+                attached="top"
+                content="Password is required"
+                icon="attention"
+                warning
+              />
+            ) : (
+              <div />
+            )}
+            <br />
+            <Form size="large" name="form" onSubmit={this.handleSubmit}>
+              <Segment stacked>
+                <Form.Input
+                  fluid
+                  icon="user"
+                  iconPosition="left"
+                  placeholder="User Name"
+                  name="username"
+                  value={username}
+                  onChange={this.handleChange}
+                />
+                <Form.Input
+                  fluid
+                  icon="lock"
+                  iconPosition="left"
+                  placeholder="Password"
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={this.handleChange}
+                />
+                <Button color="teal" fluid size="large" loading={loggingIn}>
+                  Login
+                </Button>
+              </Segment>
+            </Form>
+            {/* <Message>
+            New to us? <a href='#'>Sign Up</a>
+          </Message> */}
+          </Grid.Column>
+        </Grid>
       </div>
     );
   }
