@@ -10,7 +10,6 @@ import {
   Message
 } from "semantic-ui-react";
 
-import classes from "./LoginPage.css";
 import { userActions } from "../../actions";
 
 class LoginPage extends Component {
@@ -49,7 +48,6 @@ class LoginPage extends Component {
     return (
       <div>
         <Grid
-          className={classes.loginForm}
           textAlign="center"
           style={{ minHeight: 700 }}
           verticalAlign="middle"
