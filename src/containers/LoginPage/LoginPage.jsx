@@ -47,10 +47,11 @@ class LoginPage extends Component {
     const { loggingIn } = this.props;
     const { username, password, submitted } = this.state;
     return (
-      <div className={classes.loginForm}>
+      <div>
         <Grid
+          className={classes.loginForm}
           textAlign="center"
-          style={{ height: "100%" }}
+          style={{ minHeight: 700 }}
           verticalAlign="middle"
         >
           <Grid.Column style={{ maxWidth: 450 }}>
