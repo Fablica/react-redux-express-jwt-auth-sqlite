@@ -1,9 +1,10 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { Container, Dropdown, Image, Menu } from "semantic-ui-react";
 
 import classes from "./FixedHeader.css";
 
-export const FixedHeader = ({ user, users }) => (
+export const FixedHeader = ({ user }) => (
     <Menu fixed="top" inverted>
       <Container>
         <Menu.Item as="a" header>
@@ -40,7 +41,7 @@ export const FixedHeader = ({ user, users }) => (
                   <Dropdown.Item>List Item</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown.Item>
-              <Dropdown.Item>List Item</Dropdown.Item>
+              <Dropdown.Item as={NavLink} to="/login">Logout</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </Menu.Menu>

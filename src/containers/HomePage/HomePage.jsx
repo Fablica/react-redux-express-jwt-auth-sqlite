@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import { Container, Header, Popup, Image } from "semantic-ui-react";
 
 import { userActions } from "../../actions";
@@ -42,9 +41,6 @@ class HomePage extends Component {
                 />
               ))}
           </div>
-          <p>
-            <Link to="/login">Logout</Link>
-          </p>
         </Container>
       </div>
     );
