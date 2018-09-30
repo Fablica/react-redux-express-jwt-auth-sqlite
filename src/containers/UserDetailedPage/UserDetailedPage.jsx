@@ -8,18 +8,26 @@ class UserDetailedPage extends Component {
 //  }
   render() {
     const {userDetailed} = this.props;
+<<<<<<< HEAD
     return (
       <div>
         {userDetailed}
+=======
+    console.log(userDetailed)
+    return (
+      <div>
+>>>>>>> 2d0f897a19bafd5cd48b436f3e72cce3864d0c25
       </div>
     )
   }
 }
 
 function mapStateToProps(state) {
-  const { user } = state;
+  const { userDetailed, authentication } = state;
+  const { user } = authentication;
   return {
-    user
+    user,
+    userDetailed
   };
 }
 

@@ -11,7 +11,7 @@ export function users(state = {}, action) {
         items: action.users
       };
     case userConstants.GETALL_FAILURE:
-      return { 
+      return {
         error: action.error
       };
     case userConstants.DETAILED_REQUEST:
@@ -21,7 +21,7 @@ export function users(state = {}, action) {
       };
     case userConstants.DETAILED_SUCCESS:
       return {
-        userDetailed: action.userDetailed
+        userId: action.userId
       };
     case userConstants.DETAILED_FAILURE:
       return {

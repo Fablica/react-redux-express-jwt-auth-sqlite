@@ -58,18 +58,23 @@ export function configureFakeBackend() {
                     return;
                 }
 
+<<<<<<< HEAD
                 if (url.endsWith('/user') && opts.method === 'POST') {
 
+=======
+                if (url.endsWith('/user') && opts.method === 'GET') {
+>>>>>>> 2d0f897a19bafd5cd48b436f3e72cce3864d0c25
                     // get parameters from post request
                     let params = JSON.parse(opts.body);
 
                     // find if any user matches login credentials
                     let filteredUsers = users.filter(user => {
-                        return user.id === params.userId;
+                      // TODO: paramから取得したデータでフィルタかけられるようにする
+//                        return user.id === params.userId;
+                      return user.id === 3;
                     });
 
                     if (filteredUsers.length) {
-                        // if login details are valid return user details and fake jwt token
                         let user = filteredUsers[0];
                         let responseJson = {
                             id: user.id,

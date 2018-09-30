@@ -43,7 +43,11 @@ function getAll() {
 
 function getUserDetailed(userId) {
     const requestOptions = {
+<<<<<<< HEAD
         method: 'POST',
+=======
+        method: 'GET',
+>>>>>>> 2d0f897a19bafd5cd48b436f3e72cce3864d0c25
         headers: authHeader(),
         body: JSON.stringify({ userId })
     };
