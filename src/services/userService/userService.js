@@ -43,8 +43,9 @@ function getAll() {
 
 function getUserDetailed(userId) {
     const requestOptions = {
-        method: 'GET',
-        headers: authHeader()
+        method: 'POST',
+        headers: authHeader(),
+        body: JSON.stringify({ userId })
     };
 
     return fetch('http://localhost:3000/user', requestOptions).then(handleResponse);

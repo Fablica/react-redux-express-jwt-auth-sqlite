@@ -3,14 +3,14 @@ import { connect } from "react-redux";
 import { userActions } from "../../actions";
 
 class UserDetailedPage extends Component {
-  componentDidMount() {
-    this.props.dispatch(userActions.getUserDetailed(this.props.match.params.id));
-  }
+//  componentDidMount() {
+//    this.props.dispatch(userActions.getUserDetailed(this.props.match.params.id));
+//  }
   render() {
-    const {user} = this.props;
+    const {userDetailed} = this.props;
     return (
       <div>
-        {user}
+        {userDetailed}
       </div>
     )
   }

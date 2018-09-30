@@ -17,7 +17,7 @@ export function users(state = {}, action) {
     case userConstants.DETAILED_REQUEST:
       return {
         loading: true,
-        userDetailed: action.userDetailed
+        userId: action.userId
       };
     case userConstants.DETAILED_SUCCESS:
       return {
