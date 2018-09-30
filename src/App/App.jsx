@@ -8,6 +8,7 @@ import { alertActions } from "../actions";
 import { PrivateRoute } from "../components";
 import { HomePage } from "../containers";
 import { LoginPage } from "../containers";
+import { UserDetailedPage } from "../containers";
 
 class App extends Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class App extends Component {
         <Router history={history}>
           <div>
             <PrivateRoute exact path="/" component={HomePage} />
+            <PrivateRoute path="/profile/:id" component={UserDetailedPage} />
             <Route path="/login" component={LoginPage} />
           </div>
         </Router>

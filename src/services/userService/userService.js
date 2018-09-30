@@ -3,7 +3,8 @@ import { authHeader } from '../../helpers';
 export const userService = {
     login,
     logout,
-    getAll
+    getAll,
+    getUserDetailed
 };
 
 function login(username, password) {
@@ -38,6 +39,15 @@ function getAll() {
     };
 
     return fetch('http://localhost:3000/users', requestOptions).then(handleResponse);
+}
+
+function getUserDetailed(userId) {
+    const requestOptions = {
+        method: 'GET',
+        headers: authHeader()
+    };
+
+    return fetch('http://localhost:3000/user', requestOptions).then(handleResponse);
 }
 
 function handleResponse(response) {

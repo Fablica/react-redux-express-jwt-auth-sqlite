@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Container, Header, Popup, Image } from "semantic-ui-react";
+import { Container, Header } from "semantic-ui-react";
 
 import { userActions } from "../../actions";
 import { FixedHeader } from "../../components";
+import { UserImageCard } from "../../components";
 
 class HomePage extends Component {
   componentDidMount() {
@@ -14,7 +15,7 @@ class HomePage extends Component {
     const { user, users } = this.props;
     return (
       <div>
-        <FixedHeader user={user} users={users} />
+        <FixedHeader user={user} />
         <Container text style={{ marginTop: "7em" }}>
           <Header as="h1">Semantic UI React Fixed Template</Header>
           <p>
@@ -29,18 +30,7 @@ class HomePage extends Component {
           {users.error && (
             <span className="text-danger">ERROR: {users.error}</span>
           )}
-          <div>
-            {users.items &&
-              users.items.map((user, index) => (
-                <Popup
-                  key={user.id}
-                  trigger={<Image src={"/assets/user.png"} avatar />}
-                  header={user.firstName + " " + user.lastName}
-                  content="user info"
-                  on='hover'
-                />
-              ))}
-          </div>
+          <UserImageCard users={users}/>
         </Container>
       </div>
     );

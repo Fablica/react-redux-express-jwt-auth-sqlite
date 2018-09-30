@@ -20,10 +20,10 @@ export const FixedHeader = ({ user }) => (
             <Image
               avatar
               verticalAlign="middle"
-              src={"/assets/user.png"}
+              src={user.imageURL || "/assets/user.png"}
               classes={classes.fixedHeaderAvatarImage}
             />
-            {user.firstName}
+            {user.firstName} {user.lastName}
           </Menu.Item>
           <Menu.Item as="a">Home</Menu.Item>
 
