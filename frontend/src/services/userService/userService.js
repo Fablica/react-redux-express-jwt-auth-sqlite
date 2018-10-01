@@ -14,7 +14,7 @@ function login(username, password) {
         body: JSON.stringify({ username, password })
     };
 
-    return fetch('http://localhost:3000/users/authenticate', requestOptions)
+    return fetch('http://localhost:7777/user/authenticate', requestOptions)
         .then(handleResponse)
         .then(user => {
             // login successful if there's a jwt token in the response
@@ -38,21 +38,17 @@ function getAll() {
         headers: authHeader()
     };
 
-    return fetch('http://localhost:3000/users', requestOptions).then(handleResponse);
+    return fetch('http://localhost:7777/users', requestOptions).then(handleResponse);
 }
 
 function getUserDetailed(userId) {
     const requestOptions = {
-<<<<<<< HEAD
-        method: 'POST',
-=======
         method: 'GET',
->>>>>>> 2d0f897a19bafd5cd48b436f3e72cce3864d0c25
         headers: authHeader(),
         body: JSON.stringify({ userId })
     };
 
-    return fetch('http://localhost:3000/user', requestOptions).then(handleResponse);
+    return fetch('http://localhost:7777/user', requestOptions).then(handleResponse);
 }
 
 function handleResponse(response) {
