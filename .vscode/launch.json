@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   // Use IntelliSense to learn about possible attributes.
   // Hover to view descriptions of existing attributes.
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
@@ -10,23 +9,8 @@
       "type": "chrome",
       "request": "launch",
       "name": "Launch Chrome against localhost",
-=======
-  // IntelliSense を使用して利用可能な属性を学べます。
-  // 既存の属性の説明をホバーして表示します。
-  // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "type": "chrome",
-      "request": "launch",
-      "name": "localhost に対して Chrome を起動",
->>>>>>> 2d0f897a19bafd5cd48b436f3e72cce3864d0c25
       "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}"
     }
   ]
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 2d0f897a19bafd5cd48b436f3e72cce3864d0c25

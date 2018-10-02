@@ -7,9 +7,11 @@ import { store } from './helpers';
 import { App } from './App';
 import registerServiceWorker from './registerServiceWorker';
 
+/*
 // setup fake backend
 import { configureFakeBackend } from './helpers';
 configureFakeBackend();
+*/
 
 render(
     <Provider store={store}>

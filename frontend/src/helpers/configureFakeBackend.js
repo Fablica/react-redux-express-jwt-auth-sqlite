@@ -58,12 +58,8 @@ export function configureFakeBackend() {
                     return;
                 }
 
-<<<<<<< HEAD
                 if (url.endsWith('/user') && opts.method === 'POST') {
 
-=======
-                if (url.endsWith('/user') && opts.method === 'GET') {
->>>>>>> 2d0f897a19bafd5cd48b436f3e72cce3864d0c25
                     // get parameters from post request
                     let params = JSON.parse(opts.body);
 
