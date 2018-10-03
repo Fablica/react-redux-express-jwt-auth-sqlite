@@ -32,6 +32,7 @@ class UserController {
      */
     findById(req, res) {
       let userId = req.params.userId;
+      console.log(userId)
         this.userDao.findById(userId)
             .then(this.common.findSuccess(res))
             .catch(this.common.findError(res));

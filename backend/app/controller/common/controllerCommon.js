@@ -21,6 +21,7 @@ class controllerCommon {
 
     findSuccess(res) {
         return (result) => {
+            console.log(result)
             res.status(200); // Found
             res.json(result);
         }

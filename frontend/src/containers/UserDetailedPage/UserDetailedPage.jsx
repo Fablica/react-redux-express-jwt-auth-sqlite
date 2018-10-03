@@ -3,11 +3,13 @@ import { connect } from "react-redux";
 import { userActions } from "../../actions";
 
 class UserDetailedPage extends Component {
-//  componentDidMount() {
-//    this.props.dispatch(userActions.getUserDetailed(this.props.match.params.id));
-//  }
+  componentDidMount() {
+    this.props.dispatch(userActions.getUserDetailed(this.props.match.params.id));
+
+  }
   render() {
     const {userDetailed} = this.props;
+    console.log(this.props)
     return (
       <div>
         {userDetailed}
@@ -17,10 +19,11 @@ class UserDetailedPage extends Component {
 }
 
 function mapStateToProps(state) {
-  const { userDetailed, authentication } = state;
+  const { users, userDetailed, authentication } = state;
   const { user } = authentication;
   return {
     user,
+    users,
     userDetailed
   };
 }

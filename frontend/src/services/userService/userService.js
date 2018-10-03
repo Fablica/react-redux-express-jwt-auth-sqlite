@@ -40,18 +40,15 @@ function getAll() {
     };
 
     return fetch('http://localhost:7777/user/all', requestOptions).then(handleResponse);
-//    return fetch('http://localhost:3000/users', requestOptions).then(handleResponse);
 }
 
 function getUserDetailed(userId) {
     const requestOptions = {
         method: 'GET',
-        headers: authHeader(),
-        body: JSON.stringify({ userId })
+        headers: authHeader()
     };
 
-    return fetch('http://localhost:7777/user/:userId', requestOptions).then(handleResponse);
-//    return fetch('http://localhost:3000/users/:userId', requestOptions).then(handleResponse);
+    return fetch(`http://localhost:7777/user/find/${userId}`, requestOptions).then(handleResponse);
 }
 
 function handleResponse(response) {
@@ -59,7 +56,6 @@ function handleResponse(response) {
         const data = text && JSON.parse(text);
         if (!response.ok) {
             if (response.status === 21) {
-                // auto logout if 401 response returned from api
                 logout();
                 Location.reload(true);
             }

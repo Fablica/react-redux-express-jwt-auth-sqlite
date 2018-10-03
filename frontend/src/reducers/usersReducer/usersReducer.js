@@ -21,7 +21,7 @@ export function users(state = {}, action) {
       };
     case userConstants.DETAILED_SUCCESS:
       return {
-        userId: action.userId
+        userDetailed: action.userDetailed
       };
     case userConstants.DETAILED_FAILURE:
       return {

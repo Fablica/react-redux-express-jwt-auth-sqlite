@@ -35,7 +35,7 @@ class UserDao {
      * @return entity
      */
     findById(userId) {
-        let sqlRequest = "SELECT id, username, password, firstName, lastName, age, imageURL, comment FROM User WHERE id like '%'||$userId||'%' ";
+        let sqlRequest = "SELECT id, username, password, firstName, lastName, age, imageURL, comment FROM User WHERE id=$userId";
         let sqlParams = {$userId: userId};
         return this.common.findOne(sqlRequest, sqlParams).then(rows =>{
             let users = [];

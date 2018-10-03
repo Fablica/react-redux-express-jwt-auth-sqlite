@@ -66,6 +66,6 @@ function getUserDetailed(userId) {
     };
 
     function request(userId) { return { type: userConstants.DETAILED_REQUEST, userId } }
-    function success(userId) { return { type: userConstants.DETAILED_SUCCESS, userId } }
+    function success(userDetailed) { return { type: userConstants.DETAILED_SUCCESS, userDetailed } }
     function failure(error) { return { type: userConstants.DETAILED_FAILURE, error } }
 }
