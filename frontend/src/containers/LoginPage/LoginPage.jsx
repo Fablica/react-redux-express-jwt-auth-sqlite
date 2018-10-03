@@ -46,7 +46,7 @@ class LoginPage extends Component {
     const { loggingIn } = this.props;
     const { username, password, submitted } = this.state;
     return (
-      <div>
+      <div className="ui inverted vertical masthead center aligned segment">
         <Grid
           textAlign="center"
           style={{ minHeight: 700 }}
