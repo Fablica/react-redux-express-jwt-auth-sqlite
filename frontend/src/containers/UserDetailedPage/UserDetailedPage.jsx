@@ -7,24 +7,26 @@ class UserDetailedPage extends Component {
     this.props.dispatch(userActions.getUserDetailed(this.props.match.params.id));
 
   }
+
   render() {
-    const {userDetailed} = this.props;
-    console.log(this.props)
+    const { users } = this.props;
+    console.log(users.userDetailed)
     return (
       <div>
-        {userDetailed}
+        { users.userDetailed &&
+          users.userDetailed.map(user => <div key={user.id}>{user.firstName}</div>)
+        }
       </div>
     )
   }
 }
 
 function mapStateToProps(state) {
-  const { users, userDetailed, authentication } = state;
+  const { users, authentication } = state;
   const { user } = authentication;
   return {
     user,
-    users,
-    userDetailed
+    users
   };
 }
 
