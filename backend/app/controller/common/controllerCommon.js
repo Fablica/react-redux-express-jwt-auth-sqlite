@@ -42,7 +42,8 @@ class controllerCommon {
 
     authError(res) {
         return (error) => {
-            res.status(404); // authUser Not found
+            console.log(error)
+            res.status(401); // authUser Not found
             res.json(error);
         }
     }
