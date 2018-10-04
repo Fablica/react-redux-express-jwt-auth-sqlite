@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
+import { Container, Header } from "semantic-ui-react";
+
 import { userActions } from "../../actions";
+import { FloatedItem } from "../../components";
+import { classes } from "./UserDetailedPage.css";
+
 
 class UserDetailedPage extends Component {
   componentDidMount() {
@@ -10,11 +15,16 @@ class UserDetailedPage extends Component {
 
   render() {
     const { users } = this.props;
-    console.log(users.userDetailed)
     return (
       <div>
         { users.userDetailed &&
-          users.userDetailed.map(user => <div key={user.id}>{user.firstName}</div>)
+          users.userDetailed.map( user =>
+            <Container key={ user.id } text style={{ marginTop: '7em' }}>
+              <Header as='h1'>{ user.firstName + ' ' + user.lastName }</Header>
+
+              <FloatedItem backgroundColor={ "22222e" } imageURL={ user.imageURL } comment={ user.comment }/>
+            </Container>
+          )
         }
       </div>
     )
