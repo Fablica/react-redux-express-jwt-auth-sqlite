@@ -1,4 +1,4 @@
-# react-basic-spa
+# react-redux-express-jwt-auth-sqlite
 BackendとFrontend(React)を使用した何かを作る予定
 
 

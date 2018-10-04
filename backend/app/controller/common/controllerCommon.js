@@ -11,7 +11,10 @@ class controllerCommon {
             // ここにjwtロジックを組み込む
             // TODO
             if (result) {
-                const token = jwt.sign({ sub: result.id }, authConfig.secret);
+                const token =
+                  jwt.sign({ sub: result.id },
+                           authConfig.secret,
+                           { algorithm: authConfig.algorithm, expiresIn: 60 * 60 * 24 });
                 var authResult = { ...result[0], token };
             }
             res.status(200); // Found
