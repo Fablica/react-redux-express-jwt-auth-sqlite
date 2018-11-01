@@ -7,7 +7,7 @@ import classes from "./FixedHeader.css";
 export const FixedHeader = ({ user }) => (
     <Menu fixed="top" inverted>
       <Container>
-        <Menu.Item as="a" header>
+        <Menu.Item as={NavLink} to="/login" header>
           <Image
             size="mini"
             src="/assets/logo.png"

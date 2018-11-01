@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Image } from "semantic-ui-react";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const UserImageCard = ({ users }) => (
   <Card.Group itemsPerRow={4}>

@@ -6,9 +6,9 @@ import { Message } from "semantic-ui-react";
 import { history } from "../helpers";
 import { alertActions } from "../actions";
 import { PrivateRoute } from "../components";
-import { HomePage } from "../containers";
-import { LoginPage } from "../containers";
-import { UserDetailedPage } from "../containers";
+import { HomePage } from "../pages";
+import { LoginPage } from "../pages";
+import { UserDetailedPage } from "../pages";
 
 class App extends Component {
   constructor(props) {

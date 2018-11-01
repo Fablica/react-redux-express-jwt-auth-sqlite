@@ -4,7 +4,8 @@ import { Container, Header } from "semantic-ui-react";
 
 import { userActions } from "../../actions";
 import { FloatedItem } from "../../components";
-import { classes } from "./UserDetailedPage.css";
+import { FixedHeader } from "../../components";
+//import { classes } from "./UserDetailedPage.css";
 
 
 class UserDetailedPage extends Component {
@@ -14,9 +15,10 @@ class UserDetailedPage extends Component {
   }
 
   render() {
-    const { users } = this.props;
+    const { user, users } = this.props;
     return (
       <div>
+        <FixedHeader user={user} />
         { users.userDetailed &&
           users.userDetailed.map( user =>
             <Container key={ user.id } text style={{ marginTop: '7em' }}>

@@ -15,6 +15,7 @@
     "express-jwt": "^5.3.1",
     "jsonwebtoken": "^8.3.0",
     "rootpath": "^0.1.2",
-    "sqlite": "3.0.0"
+    "sqlite": "3.0.0",
+    "sqlite3": "^4.0.3"
   }
 }
