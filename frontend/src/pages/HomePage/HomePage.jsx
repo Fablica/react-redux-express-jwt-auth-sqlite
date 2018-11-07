@@ -31,7 +31,7 @@ class HomePage extends Component {
             <span className="text-danger">ERROR: {users.error}</span>
           )}
           <UserImageCard users={users}/>
-        </Container>
+          </Container>
       </div>
     );
   }

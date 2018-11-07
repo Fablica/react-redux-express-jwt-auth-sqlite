@@ -14,7 +14,8 @@ class controllerCommon {
                 const token =
                   jwt.sign({ sub: result.id },
                            authConfig.secret,
-                           { algorithm: authConfig.algorithm, expiresIn: 60 * 60 * 24 });
+                           //{ algorithm: authConfig.algorithm, expiresIn: 60 * 60 * 24 });
+                           { algorithm: authConfig.algorithm });
                 var authResult = { ...result[0], token };
             }
             res.status(200); // Found
