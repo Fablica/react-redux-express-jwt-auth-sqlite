@@ -5,7 +5,7 @@ const paragraph = <Image src="/assets/short-paragraph.png" />
 
 // TODO あとで色々なおすよ
 export const FloatedItem = ({ backgroundColor, imageURL, comment }) => (
-  <Item.Group relaxed style={{ backgroundColor: "#" + backgroundColor }}>
+  <Item.Group relaxed style={{ backgroundColor: "#" + backgroundColor, padding: '10px' }}>
     <Item>
       <Item.Image circular size='small' src={ imageURL || "/assets/user.png" } />
       <Item.Content verticalAlign='middle'>

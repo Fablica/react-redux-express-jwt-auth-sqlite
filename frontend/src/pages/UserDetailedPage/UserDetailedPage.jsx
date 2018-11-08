@@ -24,7 +24,7 @@ class UserDetailedPage extends Component {
             <Container key={ user.id } text style={{ marginTop: '7em' }}>
               <Header as='h1'>{ user.firstName + ' ' + user.lastName }</Header>
 
-              <FloatedItem paddingTop={'10px'} paddingbottom={'10px'} backgroundColor={ "22222e" } imageURL={ user.imageURL } comment={ user.comment }/>
+              <FloatedItem backgroundColor={ "22222e" } imageURL={ user.imageURL } comment={ user.comment }/>
             </Container>
           )
         }
