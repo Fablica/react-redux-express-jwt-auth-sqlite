@@ -25,7 +25,7 @@ export const FixedHeader = ({ user }) => (
             />
             {user.firstName} {user.lastName}
           </Menu.Item>
-          <Menu.Item as="a">Home</Menu.Item>
+          <Menu.Item as={NavLink} to="/">Home</Menu.Item>
 
           <Dropdown item simple text="Dropdown">
             <Dropdown.Menu>
