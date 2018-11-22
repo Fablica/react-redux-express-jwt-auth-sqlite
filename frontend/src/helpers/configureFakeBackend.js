@@ -1,3 +1,5 @@
+// backend 作ったのでいらない
+
 export function configureFakeBackend() {
     let users = [
         { id: 1, username: 'test1', password: 'test1', firstName: 'Test', lastName: 'User', age: 25, imageURL: 'https://randomuser.me/api/portraits/women/57.jpg', comment: 'Hi test User 1!' },
